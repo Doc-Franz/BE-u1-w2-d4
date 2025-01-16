@@ -21,6 +21,15 @@ public class Order {
         this.customer = customer;
     }
 
+    public void addProduct(Product p){
+        this.products.add(p);
+    }
+
+    public double getTotal(){
+        return this.products.stream().mapToDouble(Product::getPrice).sum();
+    }
+
+
     public long getId() {
         return id;
     }
